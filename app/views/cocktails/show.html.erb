@@ -10,12 +10,12 @@
       <div class="flex-grow" id="dose-list">
         <ol>
           <% @cocktail.doses.each do |dose| %>
-            <%= render "dose/show", dose: dose %>
+            <%= render "doses/show", dose: dose %>
           <% end %>
         </ol>
       </div>
   </div>
   <div class="dose-form">
-    <%= render "dose/form", cocktail: @cocktail, dose: @dose%>
+    <%= render "doses/form", cocktail: @cocktail, dose: @dose%>
   </div>
 </div>
