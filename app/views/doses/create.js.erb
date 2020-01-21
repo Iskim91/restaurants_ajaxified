@@ -1,0 +1,14 @@
+// console.log('hello');
+// get html for new dose
+const newDose = "<li data-dose-id='<%=@dose.id%>'><%= @dose.ingredient.name %>- <%= @dose.amount %></li>";
+
+// append new review to list
+let doses = document.getElementById('dose-list');
+doses.insertAdjacentHTML('beforeend', newDose);
+
+// empty our form
+
+let ingredient = document.getElementById('dose_ingredient_id');
+ingredient.value = "";
+let amount = document.getElementById('dose_amount');
+amount.value = "";
