@@ -1,4 +1,6 @@
 class CocktailsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @cocktails = Cocktail.all
   end
@@ -14,11 +16,13 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(params.require(:cocktail).permit(:name, :photo))
+    @cocktail.user = current_user
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
+
   end
 
   def edit

@@ -10,12 +10,7 @@
             <%= link_to cocktail_path(cocktail) do %>
               <h4><%= cocktail.name.capitalize %></h4>
             <% end %>
-            <%= link_to edit_cocktail_path(cocktail) do%>
-              <i class="far fa-edit"></i>
-            <% end %>
-            <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?"} do%>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
+
           </div>
       <% end %>
   </div>

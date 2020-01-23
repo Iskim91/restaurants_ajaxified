@@ -1,0 +1,36 @@
+<div class="container">
+  <div class=" d-flex ">
+    <%= cl_image_tag @user.avatar, alt: "user-avatar", class: "user-avatar" %>
+    <div class="profile-info flex-grow ml-3">
+      <p>Hello  </p>
+    </div>
+  </div>
+  <div class="profile-cocktails">
+    <h4>My Cocktails</h4>
+    <div class="cards">
+      <% @user.cocktails.each do |cocktail| %>
+
+        <% if cocktail.photo.url %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(cocktail.photo) %>)">
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <% end %>
+
+            <div class="card-edit">
+              <%= link_to edit_cocktail_path(cocktail) do%>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?"} do%>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+
+            <%= link_to cocktail_path(cocktail) do %>
+              <h4><%= cocktail.name.capitalize %></h4>
+            <% end %>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
