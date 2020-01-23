@@ -1,12 +1,17 @@
 <div class="container">
-  <div class=" d-flex ">
-    <%= cl_image_tag @user.avatar, alt: "user-avatar", class: "user-avatar" %>
-    <div class="profile-info flex-grow ml-3">
-      <p>Hello  </p>
+  <h1 class="text-center text-white"><%= @user.username.capitalize %></h1>
+  <div class="profile-info d-flex">
+    <% if %>
+      <%= cl_image_tag @user.avatar, alt: "user-avatar", class: "user-avatar" %>
+    <% else %>
+      <%= cl_image_tag "https://i2.wp.com/smk.org.uk/wp-content/uploads/avatar.jpg?fit=300%2C300&ssl=1", class: "user-avatar" %>
+    <% end %>
+    <div class="profile-description flex-grow">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, explicabo cupiditate laboriosam. Corporis laudantium tenetur fugiat aliquam ea dolores ratione ad sequi. Provident dolore sit ullam, cumque error eius quam quasi quibusdam placeat soluta sint ipsam rem veritatis perspiciatis, consequuntur illo quod neque sapiente cupiditate. Odio aspernatur nobis, corrupti porro aut molestias vitae reprehenderit ipsam asperiores, sit quas facere iure cupiditate ducimus nisi blanditiis cumque laboriosam impedit explicabo id? Eum in, saepe molestiae voluptates illo mollitia! Earum temporibus quam accusamus est voluptate enim cupiditate ea ab tempore adipisci. Perspiciatis placeat aliquam libero amet, accusantium natus. Explicabo sit, cupiditate repellat dolorem.</p>
     </div>
   </div>
   <div class="profile-cocktails">
-    <h4>My Cocktails</h4>
+    <p>My Cocktails</p>
     <div class="cards">
       <% @user.cocktails.each do |cocktail| %>
 
@@ -25,11 +30,10 @@
               <% end %>
             </div>
 
-            <%= link_to cocktail_path(cocktail) do %>
+            <%= link_to cocktail_path(cocktail), class: "text-decoration-none text-white" do %>
               <h4><%= cocktail.name.capitalize %></h4>
             <% end %>
           </div>
-
       <% end %>
     </div>
   </div>

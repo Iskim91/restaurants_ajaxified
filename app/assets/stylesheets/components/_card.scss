@@ -4,6 +4,7 @@
   grid-gap: 16px;
   margin: 0 auto;
   position: relative;
+  min-width: 400px;
 }
 .card-category{
   position: relative;
@@ -15,14 +16,32 @@
   background-size: cover;
   border-radius: 2px;
   box-shadow: 1px 0px 10px rgba(255, 244, 38, 0.2);
-
 }
+
+.card-category:hover{
+  filter: brightness(90%);
+  .card-user{
+    height: 36px;
+    width: 36px;
+  }
+}
+
 .card-category:hover{
   .card-edit a{
     visibility: visible;
     color: black;
   }
 }
+
+.card-user{
+  position: absolute;
+  top: -13px;
+  left: -8px;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
+
 .card-edit{
   display: flex;
   position: absolute;
@@ -31,7 +50,7 @@
   a{
     height: 24px;
     width: 24px;
-    background-color: white;
+    background-color: rgba(250, 250, 250, 0.8);
     border-radius: 50%;
     text-decoration: none;
     margin-left: 4px;
