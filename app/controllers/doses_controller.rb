@@ -3,11 +3,6 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(params.require(:dose).permit(:amount, :ingredient_id))
     @dose.cocktail = @cocktail
-    # if @dose.save
-    #   redirect_to cocktail_path(@cocktail) # <-- will render `app/views/reviews/create.js.erb`
-    # else
-    #   render 'cocktails/show'
-    # end
     if @dose.save
       respond_to do |format|
         format.html { redirect_to cocktail_path(@cocktail) }
@@ -22,8 +17,7 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @cocktail = Cocktail.find(params[:id])
-    @dose = Dose.find(params[:cocktail_id])
+    @dose = Dose.find(params[:id])
     if @dose.destroy
       respond_to do |format|
         format.html { redirect_to cocktail_path(@cocktail) }

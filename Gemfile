@@ -5,6 +5,7 @@ gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
+gem 'devise'
 gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'cloudinary', '~> 1.9.1'

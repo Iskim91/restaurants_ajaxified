@@ -1,14 +1,15 @@
-// console.log('hello');
-// get html for new dose
-const newDose = "<li data-dose-id='<%=@dose.id%>'><%= @dose.ingredient.name %>- <%= @dose.amount %></li>";
+<% if @dose.persisted? %>
+  // get html for new dose
+  newDose = '<%= j render "doses/show", dose: @dose %>';
 
-// append new review to list
-let doses = document.getElementById('dose-list');
-doses.insertAdjacentHTML('beforeend', newDose);
+  // append new review to list
+  doses = document.getElementById('dose-list');
+  doses.insertAdjacentHTML('beforeend', newDose);
 
-// empty our form
-
-let ingredient = document.getElementById('dose_ingredient_id');
-ingredient.value = "";
-let amount = document.getElementById('dose_amount');
-amount.value = "";
+  // empty our form
+  newForm = document.getElementById('new_dose');
+  newForm.innerHTML = '<%= j render "doses/form" , dose: Dose.new, cocktail: @cocktail%>'
+<% else %>
+  newForm = document.getElementById('new_dose');
+  newForm.innerHTML = '<%= j render "doses/form" , dose: @dose, cocktail: @cocktail%>'
+<% end %>

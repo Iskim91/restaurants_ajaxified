@@ -5,16 +5,14 @@
   margin: 0 auto;
 }
 .card-category{
-  height: 240px;
+  height: 360px;
   width: 100%;
   color: white;
   text-align: center;
   background-position: center;
   background-size: cover;
   border-radius: 2px;
-}
-.edit-card{
-  position: absolute;
+  box-shadow: 1px 0px 10px rgba(255, 244, 38, 0.2);
 
 }
 
