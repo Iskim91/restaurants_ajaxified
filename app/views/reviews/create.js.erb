@@ -1,0 +1,19 @@
+<% if @review.persisted? %>
+  // what we want to add
+  newReview = '<%= j render "reviews/show", review: @review %>'
+
+  // where to add it
+  reviews = document.getElementById('new-review');
+  reviews.insertAdjacentHTML('beforeend', newReview);
+
+  // clear the form
+  newForm = document.getElementById('new_review');
+  newForm.innerHTML = '<%= j render "reviews/form", review: Review.new, cocktail: @cocktail %>'
+
+<% else %>
+
+  newForm = document.getElementById('new_review');
+  newForm.innerHTML = '<%= j render "reviews/form", review: @review, cocktail: @cocktail %>'
+
+<% end %>
+

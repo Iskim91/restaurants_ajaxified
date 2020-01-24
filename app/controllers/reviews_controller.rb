@@ -5,9 +5,15 @@ class ReviewsController < ApplicationController
     @review.cocktail = @cocktail
     @review.user = current_user
     if @review.save
-      redirect_to cocktail_path(@cocktail)
+      respond_to do |format|
+        format.html { redirect_to cocktail_path(@cocktail) }
+        format.js
+      end
     else
-      render 'cocktail/show'
+      respond_to do |format|
+        format.html { render 'cocktail/show' }
+        format.js
+      end
     end
   end
 end

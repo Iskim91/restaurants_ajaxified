@@ -1,0 +1,13 @@
+<div class="dose-list flex-grow" >
+  <h4>Ingredients:</h4>
+  <ol id="dose-list">
+    <% cocktail.doses.each do |dose| %>
+      <%= render "doses/show", dose: dose %>
+    <% end %>
+  </ol>
+</div>
+<% if cocktail.user == current_user %>
+  <div class="dose-form">
+    <%= render "doses/form", cocktail: cocktail, dose: dose%>
+  </div>
+<% end %>
