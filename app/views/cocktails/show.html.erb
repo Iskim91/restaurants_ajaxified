@@ -16,8 +16,27 @@
         <% end %>
       </ol>
     </div>
+    <% if @cocktail.user == current_user %>
+      <div class="dose-form">
+        <%= render "doses/form", cocktail: @cocktail, dose: @dose%>
+      </div>
+    <% end %>
   </div>
-  <div class="dose-form">
-    <%= render "doses/form", cocktail: @cocktail, dose: @dose%>
+  <div class="review-info">
+    <h4 >Reviews</h4>
+    <p><%= pluralize @cocktail.reviews.size, "Review" %></p>
+    <% if @cocktail.reviews.blank? %>
+      <p>Be the first one to leave a review</p>
+    <% else %>
+      <% @cocktail.reviews.each do |review| %>
+        <%= render "reviews/show", review: review %>
+      <% end %>
+    <% end %>
+    <% unless @cocktail.user == current_user %>
+      <div class="review-form">
+        <p>Leave a review</p>
+        <%= render "reviews/form", cocktail: @cocktail, review: @review %>
+      </div>
+    <% end %>
   </div>
 </div>

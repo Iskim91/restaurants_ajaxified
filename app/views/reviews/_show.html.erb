@@ -1,0 +1,15 @@
+<div class="review-list">
+ <div class="review-user d-flex justify-content-between">
+    <div class="d-flex">
+      <%= cl_image_tag review.user.avatar, class: "avatar-review" %>
+      <p><%= review.user.username %></p>
+    </div>
+    <div>
+      <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+    </div>
+ </div>
+  <p><%= review.comment %></p>
+</div>
+
