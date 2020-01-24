@@ -30,4 +30,7 @@ class DosesController < ApplicationController
       end
     end
   end
+
+  private
+
 end
