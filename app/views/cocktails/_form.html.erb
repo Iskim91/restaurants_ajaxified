@@ -1,6 +1,11 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file, class: "prime-btn" %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: "prime-btn" %>
-<% end %>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: 'Upload photo' %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit class: "prime-btn" %>
+    <% end %>
+  </div>
+  <%= cl_image_tag "", width: 300, class: "hidden col-12 col-md-6", id: "photo-preview" %>
+</div>
