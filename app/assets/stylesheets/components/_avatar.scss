@@ -24,13 +24,15 @@
 .user-avatar{
   height: 300px;
   width: 300px;
-  border-radius: 50%
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .avatar-review{
   height: 32px;
   width: 32px;
   border-radius: 50%;
+  object-fit: cover;
   margin-right: 8px;
 }
 
@@ -41,4 +43,5 @@
   border-radius: 50%;
   height: 32px;
   width: 32px;
+  object-fit: cover;
 }

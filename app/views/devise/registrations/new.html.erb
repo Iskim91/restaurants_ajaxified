@@ -20,6 +20,10 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :description,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "description" }%>
       <%= f.input :avatar,
                   hidden: :avatar_cache,
                   autofocus: true,
