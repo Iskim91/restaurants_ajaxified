@@ -1,5 +1,5 @@
 class Cocktail < ApplicationRecord
-  # has_one_attached :photo
+  has_one_attached :photo
   belongs_to :user
   mount_uploader :photo, PhotoUploader
   has_many :doses, dependent: :destroy
