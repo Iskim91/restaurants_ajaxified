@@ -13,6 +13,7 @@ class CocktailsController < ApplicationController
   def show
     @dose = Dose.new
     @review = Review.new
+    @user = @cocktail.user
   end
 
   def new
@@ -48,6 +49,6 @@ class CocktailsController < ApplicationController
   end
 
   def strong_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :description)
   end
 end

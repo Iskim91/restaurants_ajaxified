@@ -1,7 +1,7 @@
 <div class="container">
 
   <h1 class="text-center mb-4"><%= @cocktail.name %></h1>
-  <div class="cocktail-info d-flex">
+  <div class="cocktail-info">
     <% if @cocktail.photo.url.nil? %>
       <div class="cocktail-img" style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
     <% else %>
@@ -9,6 +9,21 @@
     <% end %>
       </div>
     <%= render 'cocktails/dose', cocktail: @cocktail, dose: @dose %>
+    <% unless @cocktail.user == current_user %>
+      <div class="cocktail-description d-flex flex-column">
+        <h4>Description:</h4>
+        <%= @cocktail.description %>
+        <div class="d-flex mt-4 justify-content-end">
+          <% if @cocktail.user.avatar.present? %>
+            <%= cl_image_tag @cocktail.user.avatar, class: "cocktail-description-avatar mr-2" %>
+            <p><%= @cocktail.user.username %></p>
+          <% else %>
+            <%= cl_image_tag "https://i2.wp.com/smk.org.uk/wp-content/uploads/avatar.jpg?fit=300%2C300&ssl=1", class: "avatar mr-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <p><%= @cocktail.user.username %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <%= render 'cocktails/review', cocktail: @cocktail %>
 </div>
