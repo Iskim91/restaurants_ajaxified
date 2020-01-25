@@ -13,3 +13,18 @@
 .dose-form{
   width: 40%;
 }
+
+.dose-items{
+  color: white;
+  a{
+    text-decoration: none;
+    color: inherit;
+    visibility: hidden;
+  }
+}
+
+.dose-items:hover{
+  a{
+    visibility: visible;
+  }
+}
