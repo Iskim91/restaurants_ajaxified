@@ -1,23 +1,27 @@
 <div class="container">
   <h1 class="text-center text-white mb-4">The Cocktail Master</h1>
-    <div class="cards">
-      <% @cocktails.each do |cocktail| %>
-        <% if cocktail.photo.url %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path(cocktail.photo) %>)">
-        <% else %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <% end %>
-        <% if cocktail.user.present? %>
-          <%= link_to user_path(cocktail.user) do%>
-            <%= cl_image_tag cocktail.user.avatar, class: "card-user" %>
-          <% end %>
-        <% else %>
-          <%= cl_image_tag "https://i2.wp.com/smk.org.uk/wp-content/uploads/avatar.jpg?fit=300%2C300&ssl=1", class: "card-user" %>
-        <% end %>
-            <%= link_to cocktail_path(cocktail), class: "text-decoration-none text-white" do %>
-              <h4><%= cocktail.name.capitalize %></h4>
-            <% end %>
-          </div>
+  <%#= form_tag(cocktails_path, method: :get) do %>
+    <%#= text_field_tag :keyword %>
+    <%#= submit_tag 'Search', id: "search"%>
+  <%# end %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <% if cocktail.photo.url %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path(cocktail.photo) %>)">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <% end %>
-  </div>
+      <% if cocktail.user.present? %>
+        <%= link_to user_path(cocktail.user) do%>
+          <%= cl_image_tag cocktail.user.avatar, class: "card-user" %>
+        <% end %>
+      <% else %>
+        <%= cl_image_tag "https://i2.wp.com/smk.org.uk/wp-content/uploads/avatar.jpg?fit=300%2C300&ssl=1", class: "card-user" %>
+      <% end %>
+          <%= link_to cocktail_path(cocktail), class: "text-decoration-none text-white" do %>
+            <h4><%= cocktail.name.capitalize %></h4>
+          <% end %>
+        </div>
+    <% end %>
+</div>
 </div>

@@ -1,7 +1,9 @@
-<li data-dose-id="<%=dose.id%>">
+<li data-dose-id="<%=dose.id%>" class="dose-items">
   <%= dose.ingredient.name %>-
   <%= dose.amount %>
-  <%= link_to dose_path(dose), method: :delete, remote: true,  data: { confirm: "Are you sure?" }  do%>
-    <i class="far fa-trash-alt"></i>
+  <% if dose.cocktail.user == current_user %>
+    <%= link_to dose_path(dose), method: :delete, remote: true,  data: { confirm: "Are you sure?" }  do%>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
   <% end %>
 </li>

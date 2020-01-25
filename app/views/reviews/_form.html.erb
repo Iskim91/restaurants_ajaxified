@@ -1,5 +1,5 @@
 <%= simple_form_for([cocktail, review], remote: true) do |f| %>
   <%= f.input :rating, collection: Review::RATINGS %>
   <%= f.input :comment %>
-  <%= f.submit "Add Review" %>
+  <%= f.submit "Add Review", class: "prime-btn" %>
 <% end %>

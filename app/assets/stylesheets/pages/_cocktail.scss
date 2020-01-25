@@ -13,3 +13,19 @@
 .dose-form{
   width: 40%;
 }
+.dose-items{
+  a{
+    visibility: hidden;
+    margin-left: 12px;
+    color: rgba(250, 250, 250, 0.7);
+  }
+}
+
+.dose-items:hover{
+  a{
+    visibility: visible;
+    // color: inherit;
+  }
+}
+
+

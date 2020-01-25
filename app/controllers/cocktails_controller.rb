@@ -2,7 +2,12 @@ class CocktailsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :cocktail_find, only: [:show, :edit, :destroy, :update]
   def index
-    @cocktails = Cocktail.all
+    # @cocktails = Cocktail.all
+    # if params[:keyword].present?
+      # @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:keyword]}")
+    # else
+      @cocktails = Cocktail.all
+    # end
   end
 
   def show
