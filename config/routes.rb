@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # root to: 'cocktails#index'
-  get: '/' to: 'cocktails#index'
+  root to: 'cocktails#index'
   devise_for :users
   resources :users, only: [:show]
   resources :doses, only: [:destroy]
