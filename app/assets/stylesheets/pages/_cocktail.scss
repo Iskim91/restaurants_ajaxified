@@ -9,6 +9,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-bottom: 12px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .dose-items{
@@ -16,13 +17,13 @@
     visibility: hidden;
     margin-left: 12px;
     color: rgba(250, 250, 250, 0.7);
+    font-family: 'Oswald', sans-serif;
   }
 }
 
 .dose-items:hover{
   a{
     visibility: visible;
-    // color: inherit;
   }
 }
 
@@ -31,6 +32,7 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 12px;
+  font-family: 'Oswald', sans-serif;
 }
 
 

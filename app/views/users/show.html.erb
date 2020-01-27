@@ -20,7 +20,7 @@
         <% else %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         <% end %>
-
+          <% if current_user == @user %>
             <div class="card-edit">
               <%= link_to edit_cocktail_path(cocktail) do%>
                 <i class="far fa-edit"></i>
@@ -29,6 +29,7 @@
                 <i class="far fa-trash-alt"></i>
               <% end %>
             </div>
+          <% end %>
 
             <%= link_to cocktail_path(cocktail), class: "text-decoration-none text-white" do %>
               <h4><%= cocktail.name.capitalize %></h4>

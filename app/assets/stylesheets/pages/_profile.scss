@@ -3,7 +3,6 @@
   width: 100%;
 }
 .profile-description{
-  margin-left: 12px;
   display: flex;
   align-items:center;
   justify-content: center;
@@ -11,14 +10,18 @@
   background-color: rgba(0, 0, 0, 0.4);
   padding: 8px;
   margin-bottom: 0px;
+  height: 300px;
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
 }
 
 .profile-cocktails{
   margin-top: 12px;
   color: white;
+  font-family: 'Oswald', sans-serif;
   p{
     font-size: 40px;
-     border-bottom: solid 2px white;
+    border-bottom: solid 2px white;
   }
 }
 @media (min-width: 100px) and (max-width: 575px) {

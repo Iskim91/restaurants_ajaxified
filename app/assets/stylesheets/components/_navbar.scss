@@ -7,21 +7,13 @@
   flex-grow: 0;
 }
 
-.navbar-brand{
-  h2 {
-    color: white;
-    font-size:20px;
-  }
+.nav-link{
+  padding: 0;
 }
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 
-}
-
-.nav-link{
-  a{
-    color: white;
-  }
 }
 
 .navbar{

@@ -6,13 +6,35 @@ body{
   background-position: center;
   linear-gradient: rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2);
   color: white;
+  font-family: 'Oswald', sans-serif;
 }
 
 .container{
   margin: 40px auto;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .container-registration{
   margin: 40px 36%;
 }
+.logo{
+  font-family: 'Lobster', cursive;
+  font-size: 28px;
+  color: white;
+}
 
+h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+p{
+  font-size: 20px;
+}
