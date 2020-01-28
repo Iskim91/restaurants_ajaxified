@@ -5,6 +5,10 @@
   padding: 8px;
   color: white;
   box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  &:hover{
+    color: inherit;
+  }
 }
 
 .upload-photo {
