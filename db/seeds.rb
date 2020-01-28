@@ -9,7 +9,7 @@ puts "Destroying Ingredients"
   Ingredient.destroy_all
 
 puts "Creating Ingredients"
-ingredients = %w[Cucumber Basil Orange Salt Sugar Mint-leaves Ice Lemon-juice Orange-juice Lime Gin Tequila Bourbon Scotch Vodka Rum Passion-fruit Pineapple Whiskey Espresso Milk Condensed-milk Honey Champagne Soda Coke Sprite Ginger-beer Tomato-juice Ginger Vermouth Campari Tabasco Tonic Soy-sauce Worcestershire Horse-raddish]
+ingredients = %w[Cucumber Basil Orange Salt Sugar Mint-leaves Ice Lemon-juice Orange-juice Lime Gin Tequila Bourbon Scotch Vodka Rum Passion-fruit Pineapple Whiskey Espresso Milk Condensed-milk Honey Champagne Soda Coke Sprite Ginger-beer Tomato-juice Ginger Vermouth Campari Tabasco Tonic Soy-sauce Worcestershire Horse-raddish Olives Cherry]
 ingredients.sort.each do |i|
   Ingredient.create(name: i)
 end
