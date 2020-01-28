@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-center text-white"><%= @user.username.capitalize %></h1>
   <div class="profile-info d-flex">
-    <% if current_user.avatar.present? %>
+    <% if @user.avatar.present? %>
       <%= cl_image_tag @user.avatar, alt: "user-avatar", class: "user-avatar" %>
     <% else %>
       <%= cl_image_tag "https://i2.wp.com/smk.org.uk/wp-content/uploads/avatar.jpg?fit=300%2C300&ssl=1", class: "user-avatar" %>
