@@ -9,15 +9,9 @@ puts "Destroying Ingredients"
   Ingredient.destroy_all
 
 puts "Creating Ingredients"
-
-  Ingredient.create(name: "Lemon Juice")
-  Ingredient.create(name: "Ice")
-  Ingredient.create(name: "Mint leaves")
-  Ingredient.create(name: "Sugar")
-  Ingredient.create(name: "Salt")
-  Ingredient.create(name: "Orange")
-  Ingredient.create(name: "Basil")
-  Ingredient.create(name: "Cucumber")
-
+ingredients = %w[Cucumber Basil Orange Salt Sugar Mint-leaves Ice Lemon-juice Orange-juice Lime Gin Tequila Bourbon Scotch Vodka Rum Passion-fruit Pineapple Whiskey Espresso Milk Condensed-milk Honey Champagne Soda Coke Sprite Ginger-beer Tomato-juice Ginger Vermouth Campari]
+ingredients.sort.each do |i|
+  Ingredient.create(name: i)
+end
 
 puts "#{Ingredient.count} ingredients created"
