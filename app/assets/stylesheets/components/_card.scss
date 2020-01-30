@@ -18,7 +18,9 @@
   box-shadow: 1px 0px 10px rgba(255, 244, 38, 0.2);
 
 }
-
+.card-cocktail{
+  position: relative;
+}
 .card-category:hover{
   filter: brightness(90%);
   .card-user{
