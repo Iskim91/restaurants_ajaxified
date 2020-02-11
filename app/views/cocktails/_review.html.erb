@@ -2,15 +2,17 @@
   <h4>Reviews</h4>
   <p><%= pluralize cocktail.reviews.size, "Review" %></p>
 
-  <% if cocktail.reviews.blank? && cocktail.user != current_user%>
-    <p>Be the first one to leave a review</p>
-  <% else %>
-    <div id="new-review">
-      <% cocktail.reviews.each do |review| %>
-        <%= render "reviews/show", review: review %>
-      <% end %>
-    </div>
-  <% end %>
+  <div id="new-review">
+    <% if cocktail.reviews.blank? && cocktail.user != current_user%>
+      <p>Be the first one to leave a review</p>
+    <% else %>
+      <div>
+        <% cocktail.reviews.each do |review| %>
+          <%= render "reviews/show", review: review %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
   <% unless cocktail.user == current_user %>
     <div class="review-form">
